@@ -62,6 +62,7 @@ public class StudentServiceImpl implements StudentService {
 
         Student student = studentMapper.toEntity(dto);
         student.setPicture(pictureId);
+        student.setAddress(student.getAddress() + ", Sri Lanka");
 
         // DB operation first (deferred) — rolls back if file save below throws
         studentRepository.save(student);
